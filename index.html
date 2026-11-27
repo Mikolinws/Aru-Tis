@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f8f5ef">
-  <meta name="description" content="Aru Tis — стоматология в Уральске. Лечение, удаление и протезирование зубов.">
+  <meta name="description" content="Aru Tis — стоматология в Уральске. Диагностика, лечение зубов, протезирование и профессиональная гигиена.">
   <title>Aru Tis — Dental Clinic</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +17,6 @@
 <body>
 
 <main class="hero" id="home">
-
   <div class="background-glow"></div>
   <div class="background-circle"></div>
   <div class="gold-line gold-line-1"></div>
@@ -26,14 +26,12 @@
   <div class="sparkle sparkle-3"></div>
 
   <header class="header container">
-
     <a href="#home" class="logo" aria-label="Aru Tis — главная">
       <svg viewBox="0 0 64 70" fill="none" aria-hidden="true">
         <path d="M32 12C22 4 5 7 5 26C5 43 15 63 22 63C28 63 26 40 32 40C38 40 36 63 42 63C49 63 59 43 59 26C59 7 42 4 32 12Z"
           stroke="currentColor" stroke-width="3.5"
           stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-
       <span class="logo-text">
         <strong>Aru Tis</strong>
         <small>DENTAL CLINIC</small>
@@ -56,13 +54,10 @@
     <a class="header-button whatsapp-link" href="#" target="_blank" rel="noopener noreferrer">
       Записаться на приём <span>→</span>
     </a>
-
   </header>
 
   <section class="hero-content container" id="about">
-
     <div class="hero-left">
-
       <div class="eyebrow">
         <span class="eyebrow-dot"></span>
         Современная стоматология в Уральске
@@ -81,21 +76,15 @@
       </p>
 
       <div class="hero-buttons">
-
         <a class="primary-button whatsapp-link" href="#" target="_blank" rel="noopener noreferrer">
           Записаться на приём <span>→</span>
         </a>
-
         <a href="#services" class="secondary-button">
-          Узнать больше <span>↓</span>
+          Услуги и цены <span>↓</span>
         </a>
-
       </div>
 
-      <!-- ПРЕИМУЩЕСТВА -->
-
       <div class="statistics">
-
         <div class="stat-item">
           <div class="stat-icon">
             <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -106,7 +95,6 @@
                 stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
             </svg>
           </div>
-
           <div class="stat-info">
             <strong>6 000+</strong>
             <small>довольных пациентов</small>
@@ -123,7 +111,6 @@
                 stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-
           <div class="stat-info">
             <strong>Гарантия</strong>
             <small>на лечение</small>
@@ -140,52 +127,38 @@
                 stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-
           <div class="stat-info">
             <strong>9:00–18:00</strong>
             <small>удобный график работы</small>
           </div>
         </div>
-
       </div>
     </div>
 
     <div class="hero-visual">
       <div class="tooth-glow"></div>
-
-      <img
-        src="assets/tooth.png"
-        alt="3D-иллюстрация зуба"
-        class="hero-tooth"
-      >
-
+      <img src="assets/tooth.png" alt="3D-иллюстрация зуба" class="hero-tooth">
       <div class="tooth-fallback" aria-hidden="true">✧</div>
     </div>
-
   </section>
 
   <a href="#services" class="scroll-indicator" aria-label="Перейти к услугам">↓</a>
 
   <div class="clinic-card">
     <div class="clinic-image">AT</div>
-
     <div class="clinic-card-text">
       <strong>Комфортная</strong>
       <span>атмосфера</span>
       <small>для всей семьи</small>
     </div>
-
     <div class="clinic-card-arrow">→</div>
   </div>
-
 </main>
 
-
-<!-- УСЛУГИ -->
+<!-- УСЛУГИ И ЦЕНЫ -->
 
 <section class="section services-section" id="services">
   <div class="container">
-
     <div class="section-kicker">
       <span></span>
       Забота о здоровье зубов
@@ -194,177 +167,254 @@
     <h2 class="section-title">Услуги и <span>цены</span></h2>
 
     <p class="section-lead">
-      Подберём подходящее решение после осмотра и консультации.
+      Выберите направление, чтобы посмотреть доступные процедуры и стоимость.
     </p>
 
     <div class="services-grid">
 
+      <!-- ДИАГНОСТИКА -->
+      <article class="service-category">
+        <button class="service-toggle" type="button"
+          aria-expanded="false" aria-controls="diagnostics-details">
+
+          <span class="category-icon">
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <circle cx="27" cy="27" r="16"
+                stroke="currentColor" stroke-width="2.5"/>
+              <path d="m39 39 15 15"
+                stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <path d="M27 19v16M19 27h16"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+
+          <span class="category-text">
+            <strong>Диагностика</strong>
+            <small>Осмотр и обследование</small>
+          </span>
+
+          <span class="service-arrow">+</span>
+        </button>
+
+        <div class="service-details" id="diagnostics-details" hidden>
+          <div class="service-item">
+            <span>Диагностика</span>
+            <strong>Бесплатно</strong>
+          </div>
+          <div class="service-item">
+            <span>Рентген снимок</span>
+            <strong>1 000 ₸</strong>
+          </div>
+          <a class="service-book whatsapp-link" href="#" data-service="диагностику">
+            Записаться <span>→</span>
+          </a>
+        </div>
+      </article>
+
       <!-- ЛЕЧЕНИЕ -->
+      <article class="service-category">
+        <button class="service-toggle" type="button"
+          aria-expanded="false" aria-controls="treatment-details">
 
-      <article class="service-card">
+          <span class="category-icon">
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <path d="M32 8v48M8 32h48"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="m15 15 34 34M49 15 15 49"
+                stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" opacity=".45"/>
+              <circle cx="32" cy="32" r="22"
+                stroke="currentColor" stroke-width="2" opacity=".4"/>
+            </svg>
+          </span>
 
-        <div class="service-icon service-illustration">
-          <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
-            <path d="M60 22C44 10 20 18 23 45c2 19 13 49 23 53 8 3 9-23 14-23s6 26 14 23c10-4 21-34 23-53 3-27-21-35-37-23Z"
-              stroke="currentColor" stroke-width="3"
-              stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M42 43c5-7 12-9 18-9"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="m84 17 3-7m7 13 7-3"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
+          <span class="category-text">
+            <strong>Лечение</strong>
+            <small>Кариес, пульпит и удаление</small>
+          </span>
 
-        <h3>Лечение зубов</h3>
+          <span class="service-arrow">+</span>
+        </button>
 
-        <p>
-          Помощь при кариесе и других проблемах с зубами.
-        </p>
-
-        <div class="service-bottom">
-          <strong>от 7 000 ₸</strong>
-
-          <a class="mini-button service-whatsapp"
-            data-service="лечение зубов"
-            href="#" target="_blank" rel="noopener noreferrer">
+        <div class="service-details" id="treatment-details" hidden>
+          <div class="service-item">
+            <span>Поверхностный кариес</span>
+            <strong>7 000 ₸</strong>
+          </div>
+          <div class="service-item">
+            <span>Средний кариес</span>
+            <strong>10 000–15 000 ₸</strong>
+          </div>
+          <div class="service-item">
+            <span>Глубокий кариес</span>
+            <strong>16 000–20 000 ₸</strong>
+          </div>
+          <div class="service-item">
+            <span>Пульпит, 1 канал</span>
+            <strong>от 30 000 ₸</strong>
+          </div>
+          <div class="service-item">
+            <span>Пульпит, 2 канала</span>
+            <strong>от 32 000 ₸</strong>
+          </div>
+          <div class="service-item">
+            <span>Пульпит, 3 канала</span>
+            <strong>от 40 000 ₸</strong>
+          </div>
+          <div class="service-item">
+            <span>Пульпит, 4 канала</span>
+            <strong>от 45 000 ₸</strong>
+          </div>
+          <div class="service-item">
+            <span>Наложение девит-пасты</span>
+            <strong>3 000 ₸</strong>
+          </div>
+          <div class="service-item">
+            <span>Удаление простое</span>
+            <strong>6 000 ₸</strong>
+          </div>
+          <div class="service-item">
+            <span>Удаление сложное</span>
+            <strong>10 000–12 000 ₸</strong>
+          </div>
+          <a class="service-book whatsapp-link" href="#" data-service="лечение зубов">
             Записаться <span>→</span>
           </a>
         </div>
-
       </article>
-
-
-      <!-- УДАЛЕНИЕ -->
-
-      <article class="service-card">
-
-        <div class="service-icon service-illustration">
-          <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
-            <path d="M51 30c-12-9-29-2-27 17 1 17 11 39 19 42 7 3 8-18 14-18s7 21 14 18c8-3 18-25 19-42 2-19-15-26-27-17-4 3-8 3-12 0Z"
-              stroke="currentColor" stroke-width="3"
-              stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M85 17 99 31M99 17 85 31"
-              stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-            <path d="M92 9v8m-8-8h8"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-
-        <h3>Удаление зубов</h3>
-
-        <p>
-          Бережное удаление по показаниям врача.
-        </p>
-
-        <div class="service-bottom">
-          <strong>от 4 000 ₸</strong>
-
-          <a class="mini-button service-whatsapp"
-            data-service="удаление зубов"
-            href="#" target="_blank" rel="noopener noreferrer">
-            Записаться <span>→</span>
-          </a>
-        </div>
-
-      </article>
-
 
       <!-- ПРОТЕЗИРОВАНИЕ -->
+      <article class="service-category">
+        <button class="service-toggle" type="button"
+          aria-expanded="false" aria-controls="prosthetics-details">
 
-      <article class="service-card">
+          <span class="category-icon">
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <path d="M32 12c-9-7-23-2-22 13 1 13 9 29 15 31 5 2 5-13 9-13s4 15 9 13c6-2 14-18 15-31 1-15-13-20-22-13Z"
+                stroke="currentColor" stroke-width="2.5"
+                stroke-linejoin="round"/>
+              <path d="M17 27h30M23 27v8m18-8v8"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
 
-        <div class="service-icon service-illustration">
-          <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
-            <path d="M20 42c0-14 12-23 25-18 6 2 10 7 15 7s9-5 15-7c13-5 25 4 25 18 0 18-13 40-21 42-8 2-9-17-19-17s-11 19-19 17C33 82 20 60 20 42Z"
-              stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
-            <path d="M30 42h60M37 42v13c0 5 4 8 8 8s8-3 8-8V42m14 0v13c0 5 4 8 8 8s8-3 8-8V42"
-              stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M60 14v-6m-4 3h8"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
+          <span class="category-text">
+            <strong>Протезирование</strong>
+            <small>Коронки и протезы</small>
+          </span>
 
-        <h3>Протезирование</h3>
+          <span class="service-arrow">+</span>
+        </button>
 
-        <p>
-          Восстановление функции и эстетики улыбки.
-        </p>
-
-        <div class="service-bottom">
-          <strong>от 10 000 ₸</strong>
-
-          <a class="mini-button service-whatsapp"
-            data-service="протезирование"
-            href="#" target="_blank" rel="noopener noreferrer">
+        <div class="service-details" id="prosthetics-details" hidden>
+          <div class="service-item">
+            <span>Металлокерамика</span>
+            <strong>25 000 ₸</strong>
+          </div>
+          <div class="service-item">
+            <span>Циркониевая коронка</span>
+            <strong>60 000 ₸</strong>
+          </div>
+          <div class="service-item">
+            <span>Съёмный протез</span>
+            <strong>42 000 ₸</strong>
+          </div>
+          <div class="service-item">
+            <span>Микропротез</span>
+            <strong>20 000 ₸</strong>
+          </div>
+          <div class="service-item">
+            <span>Починка</span>
+            <strong>8 000 ₸</strong>
+          </div>
+          <a class="service-book whatsapp-link" href="#" data-service="протезирование">
             Записаться <span>→</span>
           </a>
         </div>
+      </article>
 
+      <!-- ГИГИЕНА -->
+      <article class="service-category">
+        <button class="service-toggle" type="button"
+          aria-expanded="false" aria-controls="hygiene-details">
+
+          <span class="category-icon">
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <path d="M32 8C25 18 15 27 15 39a17 17 0 0 0 34 0C49 27 39 18 32 8Z"
+                stroke="currentColor" stroke-width="2.5"/>
+              <path d="M25 40c1 5 4 7 8 8"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="m45 10 2-4m5 12 5-1"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+
+          <span class="category-text">
+            <strong>Гигиена</strong>
+            <small>Профессиональная чистка</small>
+          </span>
+
+          <span class="service-arrow">+</span>
+        </button>
+
+        <div class="service-details" id="hygiene-details" hidden>
+          <div class="service-item">
+            <span>Ультразвуковая чистка</span>
+            <strong>500 ₸ / зуб</strong>
+          </div>
+          <a class="service-book whatsapp-link" href="#" data-service="профессиональную гигиену">
+            Записаться <span>→</span>
+          </a>
+        </div>
       </article>
 
     </div>
 
-    <p class="free-consultation">
-      <span>✦</span> Консультация бесплатная
-    </p>
+    <div class="free-consultation">
+      <span>✦</span> Диагностика — бесплатно
+    </div>
 
     <p class="price-note">
-      * Точная стоимость лечения определяется после консультации и осмотра специалиста.
+      * Стоимость указана в тенге. Итоговая стоимость лечения уточняется после осмотра.
     </p>
-
   </div>
 </section>
-
 
 <!-- ОТЗЫВЫ -->
 
 <section class="section reviews-section" id="reviews">
   <div class="container">
-
     <div class="section-kicker">
       <span></span>
       Мнение наших пациентов
     </div>
 
     <h2 class="section-title">Отзывы <span>пациентов</span></h2>
-
-    <p class="section-lead">
-      Спасибо за доверие и добрые слова!
-    </p>
+    <p class="section-lead">Спасибо за доверие и добрые слова!</p>
 
     <div class="reviews-track" id="reviewsTrack">
-
       <article class="review-card">
         <div class="review-head">
-
           <div class="review-avatar">К</div>
-
           <div>
             <h3>Катерина Лухманова</h3>
             <div class="stars">★★★★★</div>
           </div>
-
         </div>
-
         <p>
           Цены отличные. Делают всё качественно.
           Однозначно мой выбор был сделан правильно. Советую.
         </p>
       </article>
 
-
       <article class="review-card">
         <div class="review-head">
-
           <div class="review-avatar">А</div>
-
           <div>
             <h3>Арай Усербаева</h3>
             <div class="stars">★★★★★</div>
           </div>
-
         </div>
-
         <p>
           Пришла сюда с отёкшей щекой и воспалённым зубом.
           Доктор помогла, дала рекомендации и оставила очень
@@ -372,34 +422,26 @@
         </p>
       </article>
 
-
       <article class="review-card">
         <div class="review-head">
-
           <div class="review-avatar">Ж</div>
-
           <div>
             <h3>Жансай Мухамбеткали</h3>
             <div class="stars">★★★★★</div>
           </div>
-
         </div>
-
         <p>
           Очень хорошая стоматология, всей семьёй лечим зубы,
           цены адекватные.
         </p>
       </article>
-
     </div>
 
     <p class="swipe-hint">
       ← Проведите пальцем или прокрутите отзывы мышкой →
     </p>
-
   </div>
 </section>
-
 
 <!-- КОНТАКТЫ -->
 
@@ -407,7 +449,6 @@
   <div class="container contacts-layout">
 
     <div class="contacts-info">
-
       <div class="section-kicker">
         <span></span>
         Будем рады вам помочь
@@ -418,11 +459,7 @@
         <span>Aru Tis</span>
       </h2>
 
-
-      <!-- АДРЕС -->
-
       <div class="contact-row">
-
         <div class="contact-icon">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"
@@ -431,22 +468,13 @@
               stroke="currentColor" stroke-width="1.8"/>
           </svg>
         </div>
-
         <div>
           <small>Наш адрес</small>
-          <strong>
-            г. Уральск, 5 мкр, дом 7<br>
-            (ост. Алтындар)
-          </strong>
+          <strong>г. Уральск, 5 мкр, дом 7<br>(ост. Алтындар)</strong>
         </div>
-
       </div>
 
-
-      <!-- ВРЕМЯ -->
-
       <div class="contact-row">
-
         <div class="contact-icon">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="12" cy="12" r="9"
@@ -456,19 +484,13 @@
               stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-
         <div>
           <small>Время работы</small>
           <strong>Ежедневно: 9:00–18:00</strong>
         </div>
-
       </div>
 
-
-      <!-- WHATSAPP -->
-
       <div class="contact-row">
-
         <div class="contact-icon">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M20.2 11.7a8.2 8.2 0 0 1-12.1 7.2L3 20l1.2-4.8a8.2 8.2 0 1 1 16-3.5Z"
@@ -478,21 +500,13 @@
               fill="currentColor"/>
           </svg>
         </div>
-
         <div>
           <small>WhatsApp</small>
-          <strong>
-            <a href="tel:+77774266993">+7 777 426 6993</a>
-          </strong>
+          <strong><a href="tel:+77774266993">+7 777 426 6993</a></strong>
         </div>
-
       </div>
 
-
-      <!-- INSTAGRAM -->
-
       <div class="contact-row">
-
         <div class="contact-icon">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <rect x="3" y="3" width="18" height="18" rx="5"
@@ -502,32 +516,22 @@
             <circle cx="17.5" cy="6.8" r="1" fill="currentColor"/>
           </svg>
         </div>
-
         <div>
           <small>Instagram</small>
           <strong>
             <a href="https://www.instagram.com/arutis_uralsk/"
-              target="_blank" rel="noopener noreferrer">
-              @arutis_uralsk
-            </a>
+              target="_blank" rel="noopener noreferrer">@arutis_uralsk</a>
           </strong>
         </div>
-
       </div>
 
       <a class="primary-button whatsapp-link" href="#" target="_blank" rel="noopener noreferrer">
         Написать в WhatsApp <span>→</span>
       </a>
-
     </div>
 
-
-    <!-- КАРТА -->
-
     <div class="map-card">
-
       <h3>Мы на карте</h3>
-
       <iframe
         title="Расположение стоматологии Aru Tis на карте"
         src="https://maps.google.com/maps?q=5%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D1%80%D0%B0%D0%B9%D0%BE%D0%BD%207%20%D0%A3%D1%80%D0%B0%D0%BB%D1%8C%D1%81%D0%BA&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -535,34 +539,28 @@
         referrerpolicy="no-referrer-when-downgrade"
         allowfullscreen>
       </iframe>
-
       <a class="map-link"
         href="https://maps.google.com/?q=Уральск+5+микрорайон+7"
         target="_blank" rel="noopener noreferrer">
         Открыть в Google Maps →
       </a>
-
     </div>
 
   </div>
 </section>
 
-
 <!-- FOOTER -->
 
 <footer class="footer">
-
   <div class="container footer-grid">
 
     <div class="footer-brand">
-
       <a href="#home" class="logo">
         <svg viewBox="0 0 64 70" fill="none" aria-hidden="true">
           <path d="M32 12C22 4 5 7 5 26C5 43 15 63 22 63C28 63 26 40 32 40C38 40 36 63 42 63C49 63 59 43 59 26C59 7 42 4 32 12Z"
             stroke="currentColor" stroke-width="3.5"
             stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-
         <span class="logo-text">
           <strong>Aru Tis</strong>
           <small>DENTAL CLINIC</small>
@@ -570,13 +568,8 @@
       </a>
 
       <p>Здоровая улыбка начинается с заботы.</p>
-
-      <small>
-        © <span id="year"></span> Aru Tis. Все права защищены.
-      </small>
-
+      <small>© <span id="year"></span> Aru Tis. Все права защищены.</small>
     </div>
-
 
     <div class="footer-column">
       <h3>Навигация</h3>
@@ -586,7 +579,6 @@
       <a href="#contacts">Контакты</a>
     </div>
 
-
     <div class="footer-column">
       <h3>Контакты</h3>
       <a href="tel:+77774266993">+7 777 426 6993</a>
@@ -594,12 +586,9 @@
       <span>9:00–18:00</span>
     </div>
 
-
     <div class="footer-column">
       <h3>Мы в соцсетях</h3>
-
       <div class="social-links">
-
         <a href="https://www.instagram.com/arutis_uralsk/"
           target="_blank" rel="noopener noreferrer" aria-label="Instagram">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -610,7 +599,6 @@
             <circle cx="17.5" cy="6.8" r="1" fill="currentColor"/>
           </svg>
         </a>
-
         <a class="whatsapp-link" href="#" target="_blank"
           rel="noopener noreferrer" aria-label="WhatsApp">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -621,14 +609,13 @@
               fill="currentColor"/>
           </svg>
         </a>
-
       </div>
     </div>
 
   </div>
-
 </footer>
 
 <script src="script.js"></script>
 </body>
 </html>
+```
