@@ -1,6 +1,8 @@
+
 // ================================
 // ARU TIS — INTERACTIONS
 // ================================
+
 
 // MOBILE NAVIGATION
 
@@ -8,39 +10,85 @@ const menuToggle = document.getElementById('menuToggle');
 const navigation = document.getElementById('navigation');
 
 function closeMenu() {
+  if (!menuToggle || !navigation) return;
+
   navigation.classList.remove('active');
   menuToggle.setAttribute('aria-expanded', 'false');
   menuToggle.setAttribute('aria-label', 'Открыть меню');
 }
 
-menuToggle.addEventListener('click', () => {
-  const isOpen = navigation.classList.toggle('active');
+if (menuToggle && navigation) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navigation.classList.toggle('active');
 
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute(
+      'aria-label',
+      isOpen ? 'Закрыть меню' : 'Открыть меню'
+    );
+  });
 
-  menuToggle.setAttribute(
-    'aria-label',
-    isOpen ? 'Закрыть меню' : 'Открыть меню'
-  );
-});
+  navigation.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
 
-navigation.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', closeMenu);
-});
+  document.addEventListener('click', event => {
+    if (
+      !navigation.contains(event.target) &&
+      !menuToggle.contains(event.target)
+    ) {
+      closeMenu();
+    }
+  });
 
-document.addEventListener('click', event => {
-  if (
-    !navigation.contains(event.target) &&
-    !menuToggle.contains(event.target)
-  ) {
-    closeMenu();
-  }
-});
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      closeMenu();
+    }
+  });
+}
 
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape') {
-    closeMenu();
-  }
+
+// ================================
+// SERVICES ACCORDION
+// ================================
+
+const serviceButtons = document.querySelectorAll('.service-toggle');
+
+serviceButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const category = button.closest('.service-category');
+    const detailsId = button.getAttribute('aria-controls');
+    const details = document.getElementById(detailsId);
+
+    if (!category || !details) return;
+
+    const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+    // Закрываем остальные категории
+    serviceButtons.forEach(otherButton => {
+      if (otherButton === button) return;
+
+      const otherId = otherButton.getAttribute('aria-controls');
+      const otherDetails = document.getElementById(otherId);
+      const otherCategory = otherButton.closest('.service-category');
+
+      otherButton.setAttribute('aria-expanded', 'false');
+
+      if (otherDetails) {
+        otherDetails.hidden = true;
+      }
+
+      if (otherCategory) {
+        otherCategory.classList.remove('active');
+      }
+    });
+
+    // Переключаем выбранную категорию
+    button.setAttribute('aria-expanded', String(!isOpen));
+    details.hidden = isOpen;
+    category.classList.toggle('active', !isOpen);
+  });
 });
 
 
@@ -60,18 +108,16 @@ function createWhatsAppUrl(message) {
 // Общая запись
 
 document.querySelectorAll('.whatsapp-link').forEach(link => {
-  link.href = createWhatsAppUrl(generalMessage);
-});
-
-// Запись на конкретную услугу
-
-document.querySelectorAll('.service-whatsapp').forEach(link => {
   const service = link.dataset.service;
 
-  const message =
-    `Здравствуйте! Хочу записаться на ${service} в Aru Tis. Подскажите, пожалуйста, свободное время и подробности по стоимости.`;
+  if (service) {
+    const message =
+      `Здравствуйте! Хочу записаться на ${service} в Aru Tis. Подскажите, пожалуйста, свободное время и подробности по стоимости.`;
 
-  link.href = createWhatsAppUrl(message);
+    link.href = createWhatsAppUrl(message);
+  } else {
+    link.href = createWhatsAppUrl(generalMessage);
+  }
 });
 
 
@@ -83,16 +129,18 @@ const tooth = document.querySelector('.hero-tooth');
 const toothFallback = document.querySelector('.tooth-fallback');
 
 function showToothFallback() {
+  if (!tooth || !toothFallback) return;
+
   tooth.hidden = true;
   toothFallback.style.display = 'grid';
 }
 
-tooth.addEventListener('error', showToothFallback);
+if (tooth && toothFallback) {
+  tooth.addEventListener('error', showToothFallback);
 
-// Проверка изображения при загрузке
-
-if (tooth.complete && tooth.naturalWidth === 0) {
-  showToothFallback();
+  if (tooth.complete && tooth.naturalWidth === 0) {
+    showToothFallback();
+  }
 }
 
 
@@ -102,57 +150,57 @@ if (tooth.complete && tooth.naturalWidth === 0) {
 
 const reviewsTrack = document.getElementById('reviewsTrack');
 
-let isDragging = false;
-let startX = 0;
-let startScrollLeft = 0;
-let activePointerId = null;
+if (reviewsTrack) {
+  let isDragging = false;
+  let startX = 0;
+  let startScrollLeft = 0;
+  let activePointerId = null;
 
-reviewsTrack.addEventListener('pointerdown', event => {
-  if (event.pointerType === 'touch' || event.button !== 0) {
-    return;
+  reviewsTrack.addEventListener('pointerdown', event => {
+    if (event.pointerType === 'touch' || event.button !== 0) {
+      return;
+    }
+
+    isDragging = true;
+    activePointerId = event.pointerId;
+
+    startX = event.clientX;
+    startScrollLeft = reviewsTrack.scrollLeft;
+
+    reviewsTrack.classList.add('is-dragging');
+    reviewsTrack.setPointerCapture(event.pointerId);
+  });
+
+  reviewsTrack.addEventListener('pointermove', event => {
+    if (!isDragging || event.pointerId !== activePointerId) {
+      return;
+    }
+
+    const distance = event.clientX - startX;
+    reviewsTrack.scrollLeft = startScrollLeft - distance;
+  });
+
+  function stopDragging(event) {
+    if (!isDragging) return;
+
+    if (
+      event &&
+      activePointerId !== null &&
+      event.pointerId !== activePointerId
+    ) {
+      return;
+    }
+
+    isDragging = false;
+    activePointerId = null;
+
+    reviewsTrack.classList.remove('is-dragging');
   }
 
-  isDragging = true;
-  activePointerId = event.pointerId;
-
-  startX = event.clientX;
-  startScrollLeft = reviewsTrack.scrollLeft;
-
-  reviewsTrack.classList.add('is-dragging');
-
-  reviewsTrack.setPointerCapture(event.pointerId);
-});
-
-reviewsTrack.addEventListener('pointermove', event => {
-  if (!isDragging || event.pointerId !== activePointerId) {
-    return;
-  }
-
-  const distance = event.clientX - startX;
-
-  reviewsTrack.scrollLeft = startScrollLeft - distance;
-});
-
-function stopDragging(event) {
-  if (!isDragging) return;
-
-  if (
-    event &&
-    activePointerId !== null &&
-    event.pointerId !== activePointerId
-  ) {
-    return;
-  }
-
-  isDragging = false;
-  activePointerId = null;
-
-  reviewsTrack.classList.remove('is-dragging');
+  reviewsTrack.addEventListener('pointerup', stopDragging);
+  reviewsTrack.addEventListener('pointercancel', stopDragging);
+  reviewsTrack.addEventListener('lostpointercapture', stopDragging);
 }
-
-reviewsTrack.addEventListener('pointerup', stopDragging);
-reviewsTrack.addEventListener('pointercancel', stopDragging);
-reviewsTrack.addEventListener('lostpointercapture', stopDragging);
 
 
 // ================================
